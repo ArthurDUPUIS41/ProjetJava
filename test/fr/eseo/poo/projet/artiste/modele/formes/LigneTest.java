@@ -52,19 +52,7 @@ public class LigneTest {
 		assertEquals(2, ligne1.getLargeur(), EPSILON);
 		assertEquals(3, ligne1.getHauteur(), EPSILON);
 	}
-	
-	/*@Test
-	public void testConstructeur() {
-		Coordonnees p1 = new Coordonnees(1, 2);
-		Ligne ligne1 = new Ligne(p1, 2, 3);
-		assertEquals(1, ligne1.getC1().getAbscisse(), EPSILON);
-		assertEquals(2, ligne1.getC1().getOrdonnee(), EPSILON);		
-		assertEquals(3, ligne1.getC2().getAbscisse(), EPSILON);
-		assertEquals(5, ligne1.getC2().getOrdonnee(), EPSILON);		
-		assertEquals(2, ligne1.getLargeur(), EPSILON);
-		assertEquals(3, ligne1.getHauteur(), EPSILON);
-	}*/
-	
+		
 	@Test
 	public void test_setC1() {		
 		Ligne ligne1 = new Ligne();
