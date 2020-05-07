@@ -14,10 +14,10 @@ public class LigneTest {
 		Ligne ligne1 = new Ligne();
 		assertEquals(0, ligne1.getC1().getAbscisse(), EPSILON);
 		assertEquals(0, ligne1.getC1().getOrdonnee(), EPSILON);		
-		assertEquals(10, ligne1.getC2().getAbscisse(), EPSILON);
-		assertEquals(10, ligne1.getC2().getOrdonnee(), EPSILON);		
-		assertEquals(10, ligne1.getLargeur(), EPSILON);
-		assertEquals(10, ligne1.getHauteur(), EPSILON);		
+		assertEquals(100, ligne1.getC2().getAbscisse(), EPSILON);
+		assertEquals(180, ligne1.getC2().getOrdonnee(), EPSILON);		
+		assertEquals(100, ligne1.getLargeur(), EPSILON);
+		assertEquals(180, ligne1.getHauteur(), EPSILON);
 	}	
 	@Test
 	public void testConstructeur_coordonnees() {
@@ -25,10 +25,10 @@ public class LigneTest {
 		Ligne ligne1 = new Ligne(p1);
 		assertEquals(1, ligne1.getC1().getAbscisse(), EPSILON);
 		assertEquals(2, ligne1.getC1().getOrdonnee(), EPSILON);		
-		assertEquals(11, ligne1.getC2().getAbscisse(), EPSILON);
-		assertEquals(12, ligne1.getC2().getOrdonnee(), EPSILON);		
-		assertEquals(10, ligne1.getLargeur(), EPSILON);
-		assertEquals(10, ligne1.getHauteur(), EPSILON);
+		assertEquals(101, ligne1.getC2().getAbscisse(), EPSILON);
+		assertEquals(182, ligne1.getC2().getOrdonnee(), EPSILON);		
+		assertEquals(100, ligne1.getLargeur(), EPSILON);
+		assertEquals(180, ligne1.getHauteur(), EPSILON);
 	}
 	@Test
 	public void testConstructeur_largeur_hauteur() {
@@ -98,7 +98,7 @@ public class LigneTest {
 	@Test
 	public void test_perimetre() {
 		Ligne ligne1 = new Ligne();
-		assertEquals(14.142, ligne1.perimetre(), EPSILON);
+		assertEquals(205.912, ligne1.perimetre(), EPSILON);
 	}
 	
 	

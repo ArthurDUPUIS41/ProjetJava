@@ -26,22 +26,22 @@ public class Ligne extends Forme{
 	
 	// Retourne la position de la ligne
 	public Coordonnees getC1(){
-		return getPosition();
+		return this.getPosition();
 	}
 	// Retourne la position de la deuxième  extrémité de la ligne
 	public Coordonnees getC2(){		
-		return (new Coordonnees(getPosition().getAbscisse()+getLargeur(), getPosition().getOrdonnee() + getHauteur()));			
+		return (new Coordonnees(this.getC1().getAbscisse()+this.getLargeur(), this.getC1().getOrdonnee() + this.getHauteur()));			
 	}
 	// Ne déplace que la première extrémité de la ligne
 	public void setC1(Coordonnees coordonnees){
-		super.setPosition(coordonnees);
-		super.setLargeur(this.getC2().getAbscisse() - super.getPosition().getAbscisse());
-		super.setHauteur(this.getC2().getOrdonnee() - super.getPosition().getOrdonnee());			
+		this.setPosition(coordonnees);
+		this.setLargeur(this.getC2().getAbscisse() - coordonnees.getAbscisse());		
+		this.setHauteur(this.getC2().getOrdonnee() - coordonnees.getOrdonnee());			
 	}
 	// Ne déplace que la deuxième extrémité de la ligne
 	public void setC2(Coordonnees coordonnees){
-		super.setLargeur(coordonnees.getAbscisse() - this.getC1().getAbscisse());
-		super.setHauteur(coordonnees.getOrdonnee() - this.getC1().getOrdonnee());		
+		this.setLargeur(coordonnees.getAbscisse() - this.getC1().getAbscisse());
+		this.setHauteur(coordonnees.getOrdonnee() - this.getC1().getOrdonnee());		
 	}
 	
 	// Retourne une représentation textuelle de Ligne telle que ci dessous :
@@ -67,7 +67,7 @@ public class Ligne extends Forme{
 	// Retourne la distance entre C1 et C2
 	@Override
 	public double perimetre() {		
-		return getC1().distanceVers(getC2());
+		return this.getC1().distanceVers(this.getC2());
 	}
 	
 }

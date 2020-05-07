@@ -4,8 +4,8 @@ import fr.eseo.poo.projet.artiste.modele.Coordonnees;
 
 public abstract class Forme {
 
-	public static final double LARGEUR_PAR_DEFAUT=10;
-	public static final double HAUTEUR_PAR_DEFAUT=10;
+	public static final double LARGEUR_PAR_DEFAUT=100;
+	public static final double HAUTEUR_PAR_DEFAUT=180;
 	
 	private double largeur, hauteur;
 	private Coordonnees position;
@@ -19,10 +19,10 @@ public abstract class Forme {
 		this(new Coordonnees(), largeur, hauteur);
 	}	
 	public Forme(Coordonnees position) {
-		this(position,LARGEUR_PAR_DEFAUT,HAUTEUR_PAR_DEFAUT);
+		this(position, LARGEUR_PAR_DEFAUT,HAUTEUR_PAR_DEFAUT);
 	}	
 	public Forme(Coordonnees position, double largeur, double hauteur) {
-		setPosition(position);
+		this.position = position;
 		setLargeur(largeur);
 		setHauteur(hauteur);		
 	}
@@ -39,22 +39,46 @@ public abstract class Forme {
 	}
 	
 	
-	public double getCadreMinX() {				
-		return getPosition().getAbscisse();
+	public double getCadreMinX() {
+		if(getPosition().getAbscisse() < getLargeur()+getPosition().getAbscisse()) {
+			return getPosition().getAbscisse();
+		}
+		else {
+			return getLargeur() + getPosition().getAbscisse();
+		}		
 	}
+	
 	public double getCadreMinY() {			
-		return getPosition().getOrdonnee();
+		if(getPosition().getOrdonnee() < getHauteur()+getPosition().getOrdonnee()) {
+			return getPosition().getOrdonnee();
+		}
+		else {			
+			return getHauteur()+getPosition().getOrdonnee();
+		}	
 	}
-	public double getCadreMaxX() {		
-		return this.position.getAbscisse() + this.largeur;
+	
+	public double getCadreMaxX() {
+		if(getPosition().getAbscisse() < getLargeur()+getPosition().getAbscisse()) {
+			return getLargeur() + getPosition().getAbscisse();
+		}
+		else {
+			return getPosition().getAbscisse();
+		}		
 	}
-	public double getCadreMaxY() {		
-		return getPosition().getOrdonnee() + this.hauteur;
+	
+	public double getCadreMaxY() {
+		if(getPosition().getOrdonnee() < getHauteur()+getPosition().getOrdonnee()) {
+			return getHauteur()+getPosition().getOrdonnee();
+		}
+		else {
+			return getPosition().getOrdonnee();
+		}	
 	}
 		
 		
 	public void setPosition(Coordonnees position){
-		this.position=position;
+		this.position.setAbscisse(position.getAbscisse());
+		this.position.setOrdonnee(position.getOrdonnee());
 	}		
 	
 	public void setLargeur(double largeur){
@@ -66,11 +90,12 @@ public abstract class Forme {
 	}
 	
 	public void deplacerDe(double deltaX, double deltaY){
-		getPosition().deplacerDe(deltaX,deltaY);
+		this.deplacerVers(this.getPosition().getAbscisse() + deltaX, this.getPosition().getOrdonnee() + deltaY);
 	}
 	
 	public void deplacerVers(double x, double y){
-		getPosition().deplacerVers(x,y);
+		this.getPosition().setAbscisse(x);
+        this.getPosition().setOrdonnee(y);		
 	}	
 	
 	

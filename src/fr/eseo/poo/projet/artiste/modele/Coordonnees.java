@@ -11,8 +11,8 @@ public class Coordonnees {
 	private double ordonnee;	
 	
 	public Coordonnees(){		
-		this.abscisse=0;
-		this.ordonnee=0;
+		this.abscisse= ABSCISSE_PAR_DEFAUT;
+		this.ordonnee= ORDONNEE_PAR_DEFAUT;
 	}
 	
 	public Coordonnees(double abscisse, double ordonnee){				
@@ -37,14 +37,13 @@ public class Coordonnees {
 	}	
 	
 	public void deplacerDe(double deltaX, double deltaY){
-		this.abscisse = this.abscisse + deltaX;
-		this.ordonnee = this.ordonnee + deltaY;
+		this.deplacerVers(this.getAbscisse() + deltaX, this.getOrdonnee() + deltaY);
 		//System.out.println("deplacerDe x: " + this.x + " y: " + this.y);
 	}	
 	
 	public void deplacerVers(double abscisse, double ordonnee){
-		this.abscisse = abscisse;
-		this.ordonnee = ordonnee;
+		this.setAbscisse(abscisse);
+        this.setOrdonnee(ordonnee);
 	}
 	
 	public double distanceVers(Coordonnees coord){			
