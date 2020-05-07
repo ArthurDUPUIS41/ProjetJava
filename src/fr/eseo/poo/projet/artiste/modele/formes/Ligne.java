@@ -4,7 +4,6 @@ package fr.eseo.poo.projet.artiste.modele.formes;
 // La class Ligne est un extends de la class Forme
 
 import java.text.DecimalFormat;
-
 import fr.eseo.poo.projet.artiste.modele.Coordonnees;
 
 public class Ligne extends Forme{
@@ -32,12 +31,14 @@ public class Ligne extends Forme{
 	public Coordonnees getC2(){		
 		return (new Coordonnees(this.getC1().getAbscisse()+this.getLargeur(), this.getC1().getOrdonnee() + this.getHauteur()));			
 	}
-	// Ne déplace que la première extrémité de la ligne
+	// Ne déplace que la première extrémité de la ligne	
 	public void setC1(Coordonnees coordonnees){
-		this.setPosition(coordonnees);
-		this.setLargeur(this.getC2().getAbscisse() - coordonnees.getAbscisse());		
-		this.setHauteur(this.getC2().getOrdonnee() - coordonnees.getOrdonnee());			
-	}
+        this.setLargeur(this.getC2().getAbscisse() - coordonnees.getAbscisse());
+        this.setHauteur(this.getC2().getOrdonnee() - coordonnees.getOrdonnee());
+        this.setPosition(coordonnees);
+    }
+	
+	
 	// Ne déplace que la deuxième extrémité de la ligne
 	public void setC2(Coordonnees coordonnees){
 		this.setLargeur(coordonnees.getAbscisse() - this.getC1().getAbscisse());

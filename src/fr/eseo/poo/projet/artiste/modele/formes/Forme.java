@@ -57,6 +57,7 @@ public abstract class Forme {
 		}	
 	}
 	
+	
 	public double getCadreMaxX() {
 		if(getPosition().getAbscisse() < getLargeur()+getPosition().getAbscisse()) {
 			return getLargeur() + getPosition().getAbscisse();
