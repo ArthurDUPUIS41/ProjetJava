@@ -40,16 +40,8 @@ public class Ellipse extends Forme {
 
 	@Override
 	public double aire() {
-		double a;
-		double b;
-		if(this.getLargeur() < this.getHauteur()) {
-			a = this.getLargeur() / 2;
-			b = this.getHauteur() / 2;
-		}
-		else {
-			a = this.getHauteur() / 2;
-			b = this.getLargeur() / 2;
-		}		
+		double a = this.getHauteur() / 2;
+		double b = this.getLargeur() / 2;		
 		return Math.PI * a * b;		 
 	}
 
@@ -58,12 +50,12 @@ public class Ellipse extends Forme {
 		double a;
 		double b;
 		if(this.getLargeur() < this.getHauteur()) {
-			a = this.getLargeur() / 2;
-			b = this.getHauteur() / 2;
+			a = super.getLargeur() / 2;
+			b = super.getHauteur() / 2;
 		}
 		else {
-			a = this.getHauteur() / 2;
-			b = this.getLargeur() / 2;
+			a = super.getHauteur() / 2;
+			b = super.getLargeur() / 2;
 		}		
 		
 		double h = Math.pow(((a-b)/(a+b)), 2);

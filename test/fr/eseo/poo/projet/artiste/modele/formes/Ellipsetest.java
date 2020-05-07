@@ -8,7 +8,7 @@ import fr.eseo.poo.projet.artiste.modele.Coordonnees;
 //import fr.eseo.poo.projet.artiste.modele.Coordonnees;
 
 public class Ellipsetest {
-	private static final double EPSILON = 1e-3d;
+	private static final double EPSILON = 1e-2d;
 	
 	@Test
 	public void testConstructeur_Vide() {	
@@ -47,11 +47,28 @@ public class Ellipsetest {
 	
 	
 	@Test
-	
-	
-	
-	
-	
-
-
+	public void  test_air() {
+		Ellipse Ellipse = new Ellipse();
+		assertEquals(14137.17 , Ellipse.aire(), EPSILON);
+		Ellipse Ellipse2 = new Ellipse(180, 100);
+		assertEquals(14137.17 , Ellipse2.aire(), EPSILON);	
+	}
+	@Test
+	public void  test_perimetre() {
+		Ellipse Ellipse = new Ellipse();
+		assertEquals(448.85 , Ellipse.perimetre(), EPSILON);
+		Ellipse Ellipse2 = new Ellipse(180, 100);
+		assertEquals(448.85, Ellipse2.perimetre(), EPSILON);	
+	}
+	@Test
+	public void test_toString() {
+		Coordonnees p1 = new Coordonnees(1, 2);
+		Ellipse Ellipse = new Ellipse(p1, 20, 40);
+		assertEquals("Problème test toString", 
+				Ellipse.toString(), 
+				"[Ellipse] : (1,0 , 2,0) "
+				+ "dim 20,0 x 40,0 "
+				+ "périmètre : 96,88 "
+				+ "aire : 628,32");		
+	}
 }
