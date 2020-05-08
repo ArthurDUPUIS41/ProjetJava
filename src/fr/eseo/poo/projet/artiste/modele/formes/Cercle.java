@@ -18,18 +18,23 @@ public class Cercle extends Ellipse {
 		
 	public Cercle(Coordonnees coordonnees, double taille) {
 		super(coordonnees, taille, taille);
+		if (taille < 0 ) throw new IllegalArgumentException("La taille doive être positive ");
 	}
 	
-	public void setHauteur(double hauteur) {
+	public void setHauteur(double hauteur) {		
 		super.setHauteur(hauteur);
+		super.setLargeur(hauteur);
+		if (hauteur < 0) throw new IllegalArgumentException("La hauteur doiv être positive ");
 	}
 	public void setLargeur(double largeur) {
 		super.setLargeur(largeur);
+		super.setHauteur(largeur);
+		if (largeur < 0 ) throw new IllegalArgumentException("La largeur doive être positive ");
 	}	
 	
 	public String toString() {
 		DecimalFormat df = new DecimalFormat("##0.0#");	
-		return "[Cercle] : ("
+		return "[Cercle] : pos ("
 			+ df.format(this.getPosition().getAbscisse())	+ " , "
 			+ df.format(this.getPosition().getOrdonnee())	+ ") dim "
 			+ df.format(this.getLargeur())	+ " x "		

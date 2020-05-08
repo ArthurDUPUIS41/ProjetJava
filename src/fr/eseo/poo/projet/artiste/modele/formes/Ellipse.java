@@ -11,23 +11,27 @@ public class Ellipse extends Forme {
 	public Ellipse(Coordonnees coordonnees) {
 		this(coordonnees, LARGEUR_PAR_DEFAUT, HAUTEUR_PAR_DEFAUT);
 	}
-	public Ellipse(double largeur, double hauteur) {
+	public Ellipse(double largeur, double hauteur) {		
 		this(new Coordonnees(), largeur, hauteur);
+		
 	}	
-	public Ellipse(Coordonnees coordonnees, double largeur, double hauteur) {
+	public Ellipse(Coordonnees coordonnees, double largeur, double hauteur) {		
 		super(coordonnees, largeur, hauteur);
+		if (largeur < 0 || hauteur < 0) throw new IllegalArgumentException("La largeur et l’hauteur doivent être positive ");		
 	}
 	
-	public void setHauteur(double hauteur) {
+	public void setHauteur(double hauteur) {		
 		super.setHauteur(hauteur);
+		if (hauteur < 0) throw new IllegalArgumentException("La hauteur doiv être positive ");
 	}
-	public void setLargeur(double largeur) {
+	public void setLargeur(double largeur) {		
 		super.setLargeur(largeur);
+		if (largeur < 0 ) throw new IllegalArgumentException("La largeur doive être positive ");
 	}	
 	
 	public String toString() {
 		DecimalFormat df = new DecimalFormat("##0.0#");	
-		return "[Ellipse] : ("
+		return "[Ellipse] : pos ("
 			+ df.format(this.getPosition().getAbscisse())	+ " , "
 			+ df.format(this.getPosition().getOrdonnee())	+ ") dim "
 			+ df.format(this.getLargeur())	+ " x "		

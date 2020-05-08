@@ -7,7 +7,7 @@ import fr.eseo.poo.projet.artiste.modele.Coordonnees;
 
 //import fr.eseo.poo.projet.artiste.modele.Coordonnees;
 
-public class Ellipsetest {
+public class EllipseTest {
 	private static final double EPSILON = 1e-2d;
 	
 	@Test
@@ -66,7 +66,7 @@ public class Ellipsetest {
 		Ellipse Ellipse = new Ellipse(p1, 20, 40);
 		assertEquals("Problème test toString", 
 				Ellipse.toString(), 
-				"[Ellipse] : (1,0 , 2,0) "
+				"[Ellipse] : pos (1,0 , 2,0) "
 				+ "dim 20,0 x 40,0 "
 				+ "périmètre : 96,88 "
 				+ "aire : 628,32");		

@@ -45,16 +45,26 @@ public class CercleTest {
 		assertEquals(10, Cercle.getHauteur(), EPSILON);
 	}
 	
+	@Test
+	public void testConstructeur_coordonnees_largeur_negative() {	
+		Coordonnees p1 = new Coordonnees(1, 1);
+		Cercle Cercle = new Cercle(p1, 10);
+		assertEquals(1, Cercle.getPosition().getAbscisse(), EPSILON);
+		assertEquals(1, Cercle.getPosition().getOrdonnee(), EPSILON);
+		assertEquals(10, Cercle.getLargeur(), EPSILON);
+		assertEquals(10, Cercle.getHauteur(), EPSILON);
+	}
+	
 	
 	@Test
 	public void  test_air() {
 		Cercle Cercle = new Cercle();
-		assertEquals(314.16 , Cercle.aire(), EPSILON);		
+		assertEquals(7853.98 , Cercle.aire(), EPSILON);		
 	}
 	@Test
 	public void  test_perimetre() {
 		Cercle Cercle = new Cercle();
-		assertEquals(448.85 , Cercle.perimetre(), EPSILON);			
+		assertEquals(314.16 , Cercle.perimetre(), EPSILON);			
 	}
 	@Test
 	public void test_toString() {
@@ -62,9 +72,9 @@ public class CercleTest {
 		Cercle Cercle = new Cercle(p1, 20);
 		assertEquals("Problème test toString", 
 				Cercle.toString(), 
-				"[Cercle] : (1,0 , 2,0) "
-				+ "dim 20,0 x 40,0 "
-				+ "périmètre : 96,88 "
-				+ "aire : 628,32");		
+				"[Cercle] : pos (1,0 , 2,0) "
+				+ "dim 20,0 x 20,0 "
+				+ "périmètre : 62,83 "
+				+ "aire : 314,16");		
 	}
 }
