@@ -8,7 +8,9 @@ import fr.eseo.poo.projet.artiste.modele.Coordonnees;
 
 public class Ligne extends Forme{
 	
-		 
+	
+	public static final double EPSILON = 1e-1d;
+	
 	public Ligne() {
 		this(new Coordonnees(), LARGEUR_PAR_DEFAUT, HAUTEUR_PAR_DEFAUT);
 	}	
@@ -70,5 +72,33 @@ public class Ligne extends Forme{
 	public double perimetre() {		
 		return this.getC1().distanceVers(this.getC2());
 	}
+	
+	
+	
+	public boolean contient(Coordonnees coordonnees) {
+				
+		double distanceC1_C =	Math.sqrt(	Math.pow(coordonnees.getAbscisse() 	- this.getC1().getAbscisse(),	 2) 
+										+ 	Math.pow(coordonnees.getOrdonnee() 	- this.getC1().getOrdonnee(),	 2));
+		
+		double distanceC2_C =	Math.sqrt(	Math.pow(coordonnees.getAbscisse()  	- this.getC2().getAbscisse(),	 2) 
+										+ 	Math.pow(coordonnees.getOrdonnee()  	- this.getC2().getOrdonnee(),	 2));
+		
+		double distanceC1_C2 =	Math.sqrt(	Math.pow(this.getC1().getAbscisse() - this.getC2().getAbscisse(),	 2) 
+										+ 	Math.pow(this.getC1().getOrdonnee() - this.getC2().getOrdonnee(),	 2));
+		
+		//return (distanceC1_C + distanceC2_C) - distanceC1_C2;
+		if( (distanceC1_C + distanceC2_C) - distanceC1_C2 <=  EPSILON ) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	
+	
+	
+	
+	
 	
 }

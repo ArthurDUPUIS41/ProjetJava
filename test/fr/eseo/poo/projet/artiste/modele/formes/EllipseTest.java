@@ -8,7 +8,7 @@ import fr.eseo.poo.projet.artiste.modele.Coordonnees;
 //import fr.eseo.poo.projet.artiste.modele.Coordonnees;
 
 public class EllipseTest {
-	private static final double EPSILON = 1e-2d;
+	private static final double EPSILON = 0.1;
 	
 	@Test
 	public void testConstructeur_Vide() {	

@@ -13,7 +13,7 @@ public abstract class Forme {
 	//////////////////////////////////////////////////////////////////////
 	//Constructeur : 
 	public Forme()	{
-		this(new Coordonnees(), LARGEUR_PAR_DEFAUT,HAUTEUR_PAR_DEFAUT);
+		this(new Coordonnees(), LARGEUR_PAR_DEFAUT, HAUTEUR_PAR_DEFAUT);
 	}	
 	public Forme(double largeur, double hauteur) {
 		this(new Coordonnees(), largeur, hauteur);
@@ -102,6 +102,25 @@ public abstract class Forme {
 	
 	public abstract double aire();
 	public abstract double perimetre();
+	
+	public abstract boolean contient(Coordonnees coordonnees);
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }

@@ -46,14 +46,14 @@ public class Coordonnees {
         this.setOrdonnee(ordonnee);
 	}
 	
-	public double distanceVers(Coordonnees coord){			
-		 return Math.sqrt(Math.pow(coord.getAbscisse() - this.getAbscisse(), 2) 
-	 					+ Math.pow(coord.getOrdonnee() - this.getOrdonnee(), 2));
+	public double distanceVers(Coordonnees coordonnees){			
+		 return Math.sqrt(Math.pow(coordonnees.getAbscisse() - this.getAbscisse(), 2) 
+	 					+ Math.pow(coordonnees.getOrdonnee() - this.getOrdonnee(), 2));
 	}
 	
-	public double angleVers(Coordonnees coord){
-		return -Math.atan2(this.getOrdonnee() - coord.getOrdonnee(), 
-						coord.getAbscisse() - this.getAbscisse());
+	public double angleVers(Coordonnees coordonnees){
+		return -Math.atan2(this.getOrdonnee() - coordonnees.getOrdonnee(), 
+				coordonnees.getAbscisse() - this.getAbscisse());
 	}		
 	
 	public String toString()

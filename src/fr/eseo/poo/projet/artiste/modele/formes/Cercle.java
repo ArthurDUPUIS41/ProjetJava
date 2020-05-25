@@ -50,4 +50,8 @@ public class Cercle extends Ellipse {
 		return 2 * Math.PI * this.getLargeur() / 2;		
 	}
 	
+	public boolean contient(Coordonnees coordonnees) {
+		return super.contient(coordonnees);
+	}
+	
 }

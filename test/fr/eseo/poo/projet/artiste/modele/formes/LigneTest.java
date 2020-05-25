@@ -89,9 +89,13 @@ public class LigneTest {
 		assertEquals(205.912, ligne1.perimetre(), EPSILON);
 	}
 	
-	
-	
-	
+	@Test
+	public void test_contient() {		
+		Coordonnees p1 = new Coordonnees(1, 1);
+		Ligne ligne1 = new Ligne(p1, 2, 2);
+		Coordonnees pC = new Coordonnees(2, 2.5);
+		assertEquals(true, ligne1.contient(pC));
+	}
 	
 	
 }

@@ -37,19 +37,18 @@ public class Ellipse extends Forme {
 			+ df.format(this.getLargeur())	+ " x "		
 			+ df.format(this.getHauteur())	+ " périmètre : "
 			+ df.format(this.perimetre())	+ " aire : "
-			+ df.format(this.aire());	
-										
-//[Ellipse] : pos (10,0 , 10,0) dim 25,0 x 15,0 périmètre : 63,82 aire : 294,52
+			+ df.format(this.aire());											
+
 	}
 
-	@Override
+	
 	public double aire() {
 		double a = this.getHauteur() / 2;
 		double b = this.getLargeur() / 2;		
 		return Math.PI * a * b;		 
 	}
 
-	@Override
+	
 	public double perimetre() {
 		double a;
 		double b;
@@ -64,6 +63,33 @@ public class Ellipse extends Forme {
 		
 		double h = Math.pow(((a-b)/(a+b)), 2);
 		return Math.PI*(a + b)*(1 + (3*h / (10 + Math.sqrt(4 - 3*h))));
+	}
+	
+	
+	public boolean contient(Coordonnees coordonnees) {
+		double x =  coordonnees.getAbscisse();
+		double y = coordonnees.getOrdonnee(); 
+		
+		//Calcul du site : https://www.developpez.net/forums/d364262/general-developpement/algorithme-mathematiques/mathematiques/determiner-point-ellipse/
+		double xA = this.getPosition().getAbscisse();
+		double yA = this.getPosition().getOrdonnee();
+		double xB = this.getPosition().getAbscisse() + getLargeur();
+		double yB = this.getPosition().getOrdonnee() + getHauteur();
+		double xEllipse = (xA + xB) / 2;
+		double yEllipse = (yA + yB) / 2;
+		double xAbsEllipse = Math.abs(xB - xA) / 2;
+		double yAbsEllipse = Math.abs(yB - yA) / 2;
+		
+		double calculPoint = 	Math.pow(((x - xEllipse)/xAbsEllipse), 2) + 
+								Math.pow(((y - yEllipse)/yAbsEllipse), 2);
+		if(calculPoint <= 1) {
+			return true;
+		}		
+		else {
+			return false;
+		}
+		
+				
 	}
 
 }
