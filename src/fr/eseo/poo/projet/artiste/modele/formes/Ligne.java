@@ -57,8 +57,8 @@ public class Ligne extends Forme{
 				+ df.format(this.getC1().getOrdonnee())	+ ") c2 : ("
 				+ df.format(this.getC2().getAbscisse())	+ " , " 
 				+ df.format(this.getC2().getOrdonnee())	+ ") longueur : "
-				+ df.format(this.getC1().distanceVers(this.getC2()))	+ " angle : "
-				+ df.format(this.getC2().angleVers(this.getC1())*180/Math.PI +180)	+ "°" ;	
+				+ df.format(this.getC1().distanceVers(	this.getC2()))	+ " angle : "
+				+ df.format(this.getC2().angleVers(		this.getC1())*180/Math.PI +180)	+ "°" ;	
 	}
 	
 	// Retourne 0, par définition des lignes n'ont pas d'aire
@@ -80,8 +80,8 @@ public class Ligne extends Forme{
 		double distanceC1_C =	Math.sqrt(	Math.pow(coordonnees.getAbscisse() 	- this.getC1().getAbscisse(),	 2) 
 										+ 	Math.pow(coordonnees.getOrdonnee() 	- this.getC1().getOrdonnee(),	 2));
 		
-		double distanceC2_C =	Math.sqrt(	Math.pow(coordonnees.getAbscisse()  	- this.getC2().getAbscisse(),	 2) 
-										+ 	Math.pow(coordonnees.getOrdonnee()  	- this.getC2().getOrdonnee(),	 2));
+		double distanceC2_C =	Math.sqrt(	Math.pow(coordonnees.getAbscisse()  - this.getC2().getAbscisse(),	 2) 
+										+ 	Math.pow(coordonnees.getOrdonnee()  - this.getC2().getOrdonnee(),	 2));
 		
 		double distanceC1_C2 =	Math.sqrt(	Math.pow(this.getC1().getAbscisse() - this.getC2().getAbscisse(),	 2) 
 										+ 	Math.pow(this.getC1().getOrdonnee() - this.getC2().getOrdonnee(),	 2));
