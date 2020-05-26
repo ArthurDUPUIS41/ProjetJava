@@ -93,8 +93,10 @@ public class LigneTest {
 	public void test_contient() {		
 		Coordonnees p1 = new Coordonnees(1, 1);
 		Ligne ligne1 = new Ligne(p1, 2, 2);
-		Coordonnees pC = new Coordonnees(2, 2.5);
-		assertEquals(true, ligne1.contient(pC));
+		Coordonnees pC1 = new Coordonnees(2, 2.5);
+		assertEquals(true, ligne1.contient(pC1));
+		Coordonnees pC2 = new Coordonnees(3, 2.5);
+		assertEquals(false, ligne1.contient(pC2));		
 	}
 	
 	

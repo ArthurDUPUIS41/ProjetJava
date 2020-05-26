@@ -71,4 +71,15 @@ public class EllipseTest {
 				+ "périmètre : 96,88 "
 				+ "aire : 628,32");		
 	}
+	
+	
+	@Test
+	public void test_contient() {		
+		Coordonnees p1 = new Coordonnees(0.6, 1);
+		Ellipse ellipse = new Ellipse(p1, 2.82, 2);
+		Coordonnees pC1 = new Coordonnees(1.2, 1.4);
+		assertEquals(true, ellipse.contient(pC1));
+		Coordonnees pC2 = new Coordonnees(3.4, -0.8);
+		assertEquals(false, ellipse.contient(pC2));		
+	}
 }

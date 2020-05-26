@@ -77,4 +77,14 @@ public class CercleTest {
 				+ "périmètre : 62,83 "
 				+ "aire : 314,16");		
 	}
+	
+	@Test
+	public void test_contient() {		
+		Coordonnees p1 = new Coordonnees(0.5, -0.5);
+		Cercle cercle = new Cercle(p1, 1);
+		Coordonnees pC1 = new Coordonnees(1.2, 0.2);
+		assertEquals(true, cercle.contient(pC1));
+		Coordonnees pC2 = new Coordonnees(1.2, -0.5);
+		assertEquals(false, cercle.contient(pC2));		
+	}
 }
