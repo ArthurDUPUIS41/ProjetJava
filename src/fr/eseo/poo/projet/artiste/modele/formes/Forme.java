@@ -39,7 +39,8 @@ public abstract class Forme {
 	}
 	
 	
-	public double getCadreMinX() {
+	public double getCadreMinX() {		
+		
 		if(getPosition().getAbscisse() < getLargeur()+getPosition().getAbscisse()) {
 			return getPosition().getAbscisse();
 		}
