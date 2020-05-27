@@ -3,6 +3,7 @@ package fr.eseo.poo.projet.artiste.vue.ihm;
 import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JPanel;
+import java.util.ArrayList;
 import java.util.List;
 
 //import javax.swing.UIManager;
@@ -14,7 +15,7 @@ public class PanneauDessin extends JPanel{
 	public static final int HAUTEUR_PAR_DEFAUT = 250;
 	public static final Color COULEUR_FOND_PAR_DEFAUT = new Color(192, 192, 192); //lightGray
 	
-
+	List<String> list = new ArrayList<String>();
 		
 	
 	public PanneauDessin(){
@@ -33,10 +34,8 @@ public class PanneauDessin extends JPanel{
 	}
 	
 	
-	public ajouterVueForme() {
-		
-		
-		
+	public ajouterVueForme(VueForme vueForme) {
+		 list.add(vueForme);		
 	}
 	
 	
