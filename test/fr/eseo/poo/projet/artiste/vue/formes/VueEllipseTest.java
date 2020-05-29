@@ -6,7 +6,6 @@ import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
 import fr.eseo.poo.projet.artiste.modele.Coordonnees;
-import fr.eseo.poo.projet.artiste.modele.formes.Cercle;
 import fr.eseo.poo.projet.artiste.modele.formes.Ellipse;
 import fr.eseo.poo.projet.artiste.vue.ihm.PanneauDessin;
 

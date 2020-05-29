@@ -5,6 +5,9 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JPanel;
+
+
+import fr.eseo.poo.projet.artiste.controleur.outils.Outil;
 import fr.eseo.poo.projet.artiste.vue.formes.VueForme;
 
 import java.util.ArrayList;
@@ -21,7 +24,8 @@ public class PanneauDessin extends JPanel{
 	
 	// Initialisation de la liste "vueFormes" qui contiendra toutes les formes"
 	private final List<VueForme> vueFormes = new ArrayList<VueForme>();
-		
+	
+	private Outil outilCourant;
 	
 	public PanneauDessin(){
 		this.setBackground(COULEUR_FOND_PAR_DEFAUT);
@@ -67,6 +71,32 @@ public class PanneauDessin extends JPanel{
 		g2D.dispose();
 		
 	}
+	
+
+	public void associerOutil(Outil outil){
+		if(getOutilCourant() != null) {
+			dissocierOutil();
+		}
+		this.outilCourant = outil;		
+	}
+	private void dissocierOutil(){
+		getOutilCourant().setPanneauDessin(null);
+		removeMouseListener(outilCourant);
+		removeMouseMotionListener(outilCourant);
+		setOutilCourant(null);				
+	}
+	
+	public Outil getOutilCourant() {		
+		return this.outilCourant;
+	}
+	
+	private void setOutilCourant(Outil outil) {
+		this.outilCourant = outil;		
+	}
+	
+	
+	
+	
 	
 	
 	
