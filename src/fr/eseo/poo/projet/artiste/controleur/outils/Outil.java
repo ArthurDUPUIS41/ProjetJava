@@ -72,7 +72,7 @@ public abstract class Outil implements MouseInputListener{
 	public void mousePressed(MouseEvent event) {		
 		Coordonnees coordonnees = new Coordonnees((double) event.getX(), (double) event.getY());	
 		setDebut(coordonnees);		
-		System.out.println(coordonnees);
+		System.out.println("mousePressed");		
 	}
 	
 	

@@ -1,49 +1,35 @@
 package fr.eseo.poo.projet.artiste.controleur.outils;
 
-import java.awt.Color;
 
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
-import fr.eseo.poo.projet.artiste.modele.formes.Ligne;
-import fr.eseo.poo.projet.artiste.vue.formes.VueLigne;
 import fr.eseo.poo.projet.artiste.vue.ihm.PanneauDessin;
 
 public class OutilLigneTest {
 
 	
 	public OutilLigneTest() {
-		creationPanel();
-		//creationLigne();		
+		creationPanel();			
 	}
 	
 	private void creationPanel() {
-		JFrame f2 = new JFrame("Blues du Businessman");	
-		f2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		PanneauDessin panneauDessin2 = new PanneauDessin(720, 480, new Color(192, 192, 192));	
+		JFrame f1 = new JFrame("Blues du Businessman");	
 		
+		PanneauDessin panneauDessin1 = new PanneauDessin();			
+		OutilLigne outilLigne1 = new OutilLigne();
 		
-		/*OutilLigne 
-		
-		Ligne ligne1	= new Ligne();		
-		VueLigne vueLigne1	= new VueLigne(ligne1);
-		panneauDessin2.ajouterVueForme(vueLigne1);*/
-		Outil.mousePressed(MOUSE_PRESSED);
-		
-		
-		
-		f2.getContentPane().add(panneauDessin2);
-		f2.setLocationRelativeTo(null);
-		f2.pack();
-		f2.setVisible(true);
-		
+		panneauDessin1.associerOutil(outilLigne1);		
+			
+		f1.add(panneauDessin1);		
+		f1.pack();
+		f1.setLocationRelativeTo(null);
+		f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		f1.setVisible(true);		
 	}
 	
 	
-	private void creationLigne() {
-		
-		
-	}
+	
 
 	public static void main(String [] args) {
 		SwingUtilities.invokeLater(new Runnable(){

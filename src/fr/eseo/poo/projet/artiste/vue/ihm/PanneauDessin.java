@@ -23,32 +23,28 @@ public class PanneauDessin extends JPanel{
 	public static final Color COULEUR_FOND_PAR_DEFAUT = new Color(192, 192, 192); //lightGray
 	
 	// Initialisation de la liste "vueFormes" qui contiendra toutes les formes"
-	private final List<VueForme> vueFormes = new ArrayList<VueForme>();
+	private final List<VueForme> vueFormes;
 	
 	private Outil outilCourant;
 	
 	public PanneauDessin(){
-		this.setBackground(COULEUR_FOND_PAR_DEFAUT);
-		this.setPreferredSize(new Dimension(LARGEUR_PAR_DEFAUT, HAUTEUR_PAR_DEFAUT));
+		this(LARGEUR_PAR_DEFAUT, HAUTEUR_PAR_DEFAUT, COULEUR_FOND_PAR_DEFAUT);	
 	}	
 	
 	public PanneauDessin(int largeur, int hauteur, Color couleur){
 		super.setBackground(couleur);
 		super.setPreferredSize(new Dimension(largeur, hauteur));
+		this.vueFormes = new ArrayList<>();
 	}
 	
 	// Permet de récuppérer la listes des formes enregistrées
-	public List<VueForme> getVueFormes() {
-		if (vueFormes.isEmpty()) {			
-			System.out.println("Liste vide");			 
-		}
-		return vueFormes;
-		
+	public List<VueForme> getVueFormes() {		
+		return this.vueFormes;		
 	}
 	
 	
 	public void ajouterVueForme(VueForme vueForme) {
-		vueFormes.add(vueForme);	
+		this.vueFormes.add(vueForme);
 	}
 	
 	@Override
@@ -74,10 +70,15 @@ public class PanneauDessin extends JPanel{
 	
 
 	public void associerOutil(Outil outil){
-		if(getOutilCourant() != null) {
-			dissocierOutil();
+		if(outil != null) {		
+			if(getOutilCourant() != null) {
+				dissocierOutil();
+			}
+			this.outilCourant = outil;
+			outil.setPanneauDessin(this);
+			addMouseListener(outilCourant);
+			addMouseMotionListener(outilCourant);
 		}
-		this.outilCourant = outil;		
 	}
 	private void dissocierOutil(){
 		getOutilCourant().setPanneauDessin(null);
