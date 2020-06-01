@@ -9,9 +9,9 @@ public class OutilLigne extends OutilForme{
 	protected VueForme creerVueForme(){		
 		
 		double largeur =  this.getFin().getAbscisse() - this.getDebut().getAbscisse();
-		double hauteur =  getFin().getOrdonnee() - getDebut().getOrdonnee();
+		double hauteur =  this.getFin().getOrdonnee() - this.getDebut().getOrdonnee();
 				
-		Ligne ligne	= new Ligne(getDebut(), largeur, hauteur);		
+		Ligne ligne	= new Ligne(this.getDebut(), largeur, hauteur);		
 		VueLigne vueLigne	= new VueLigne(ligne);
 		return vueLigne;
 	}

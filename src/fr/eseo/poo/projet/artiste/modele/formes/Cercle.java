@@ -30,7 +30,7 @@ public class Cercle extends Ellipse {
 		super.setLargeur(largeur);
 		super.setHauteur(largeur);
 		if (largeur < 0 ) throw new IllegalArgumentException("La largeur doive être positive ");
-	}	
+	}
 	
 	public String toString() {
 		DecimalFormat df = new DecimalFormat("##0.0#");	

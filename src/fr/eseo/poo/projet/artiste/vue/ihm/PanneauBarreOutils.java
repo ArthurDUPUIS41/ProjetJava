@@ -1,12 +1,17 @@
 package fr.eseo.poo.projet.artiste.vue.ihm;
 
-public class PanneauBarreOutils {
+import javax.swing.JPanel;
 
-	String NOM_ACTION;
+public class PanneauBarreOutils extends JPanel{
+
+	private PanneauDessin panneauDessin;
 	
-	public ActionEffacer(PanneauDessin panneauDessin){
+	public PanneauBarreOutils(PanneauDessin panneauDessin) {
 		
 		
+	}
+	
+	public void initComponents(){
 		
 	}
 	
