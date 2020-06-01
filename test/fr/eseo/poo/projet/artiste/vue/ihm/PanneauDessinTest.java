@@ -20,7 +20,7 @@ public class PanneauDessinTest{
 		f1.getContentPane().add(panneauDessin1);
 		f1.setLocationRelativeTo(null);
 		f1.pack();
-		f1.setVisible(true);		
+		f1.setVisible(true);
 	}
 	
 	private void testConstructeur(){		
@@ -31,7 +31,7 @@ public class PanneauDessinTest{
 		f2.getContentPane().add(panneauDessin2);
 		f2.setLocationRelativeTo(null);
 		f2.pack();
-		f2.setVisible(true);		
+		f2.setVisible(true);
 	}
 	
 	
